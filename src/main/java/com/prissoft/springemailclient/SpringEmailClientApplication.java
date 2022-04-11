@@ -21,9 +21,14 @@ public class SpringEmailClientApplication {
 	@EventListener(ApplicationReadyEvent.class)
 	public void triggerMail()throws MessagingException{
 
-		service.sendSimpleEmail("ramkrishna@prissoft.net",
-				"Hello sir,I am feeling sick ,so request you to grant a holiday leave for me",
-				"Application for Leave ");
+//		service.sendSimpleEmail("ramkrishna@prissoft.net",
+//				"Hello sir,I am feeling sick ,so request you to grant a holiday leave for me",
+//				"Application for Leave ");
+
+		service.sendEmailWithAttachment("ramkrishna@prissoft.net",
+				"Hello sir,I am feeling sick ,so request you to grant a holiday leave for me.Please find the attach document given by Doctor prescription for medicine ",
+				"Leave Application For Medical Leave",
+				"C:\\Users\\admin\\Desktop\\medicine_ prescription.jpg");
 
 	}
 }
